@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣臨床藥學會 課程查詢</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .settings-panel {
+            background: #f8f9fa;
+            padding: 25px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .settings-row {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .date-input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .date-input-group label {
+            font-weight: bold;
+            color: #495057;
+        }
+        
+        .date-input-group input {
+            padding: 10px 15px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .date-input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .btn {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .update-info {
+            text-align: center;
+            padding: 15px;
+            background: #e7f3ff;
+            color: #004085;
+            font-size: 14px;
+        }
+        
+        .courses-container {
+            padding: 30px;
+        }
+        
+        .course-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+        
+        .course-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            flex: 1;
+        }
+        
+        .course-credits {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+        
+        .course-info {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px 15px;
+            margin-bottom: 15px;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #6c757d;
+        }
+        
+        .info-value {
+            color: #495057;
+        }
+        
+        .registration-info {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .course-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .course-link:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 50px;
+            color: #6c757d;
+            font-size: 1.2em;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2em;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💊 台灣臨床藥學會 藥學師資 課程查詢</h1>
+            <p>繼續教育課程資訊</p>
+        </div>
+        
+        <div class="settings-panel">
+            <div class="settings-row">
+                <div class="date-input-group">
+                    <label for="startDate">開始日期：</label>
+                    <input type="date" id="startDate">
+                </div>
+                
+                <div class="date-input-group">
+                    <label for="endDate">結束日期：</label>
+                    <input type="date" id="endDate">
+                </div>
+                
+                <button class="btn btn-primary" onclick="saveDateSettings()">💾 保存設定</button>
+            </div>
+        </div>
+        
+        <div class="update-info" id="updateInfo">
+            載入中...
+        </div>
+        
+        <div class="courses-container" id="coursesContainer">
+            <div class="loading">正在載入課程資料...</div>
+        </div>
+    </div>
+
+    <script>
+        // 載入已保存的日期設定
+        function loadDateSettings() {
+            const startDate = localStorage.getItem('startDate');
+            const endDate = localStorage.getItem('endDate');
+            
+            if (startDate) {
+                document.getElementById('startDate').value = startDate;
+            } else {
+                // 預設今天
+                document.getElementById('startDate').value = new Date().toISOString().split('T')[0];
+            }
+            
+            if (endDate) {
+                document.getElementById('endDate').value = endDate;
+            } else {
+                // 預設30天後
+                const futureDate = new Date();
+                futureDate.setDate(futureDate.getDate() + 30);
+                document.getElementById('endDate').value = futureDate.toISOString().split('T')[0];
+            }
+        }
+        
+        // 保存日期設定到 localStorage
+        function saveDateSettings() {
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            
+            if (!startDate || !endDate) {
+                alert('請輸入完整的日期區間');
+                return;
+            }
+            
+            if (new Date(startDate) > new Date(endDate)) {
+                alert('開始日期不能晚於結束日期');
+                return;
+            }
+            
+            localStorage.setItem('startDate', startDate);
+            localStorage.setItem('endDate', endDate);
+            
+            // 同時保存給 Python 腳本使用
+            const settings = {
+                start_date: startDate.replace(/-/g, '/'),
+                end_date: endDate.replace(/-/g, '/')
+            };
+            
+            // 這裡需要手動創建 date_settings.json 檔案
+            console.log('日期設定已保存到瀏覽器:', settings);
+            alert('日期設定已保存！\n\n請將以下內容複製到 date_settings.json：\n' + JSON.stringify(settings, null, 2));
+        }
+        
+        // 載入課程資料
+        async function loadCourses() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                
+                // 顯示更新時間
+                document.getElementById('updateInfo').innerHTML = 
+                    `📅 最後更新時間：${data.last_updated} | 共 ${data.courses.length} 筆課程`;
+                
+                // 顯示課程列表
+                const container = document.getElementById('coursesContainer');
+                
+                if (data.courses.length === 0) {
+                    container.innerHTML = '<div class="no-data">目前沒有符合條件的課程</div>';
+                    return;
+                }
+                
+                container.innerHTML = data.courses.map(course => `
+                    <div class="course-card">
+                        <div class="course-header">
+                            <div class="course-title">${course.課程主題}</div>
+                            <div class="course-credits">💯 ${course.積分}</div>
+                        </div>
+                        
+                        <div class="course-info">
+                            <span class="info-label">📅 課程期間：</span>
+                            <span class="info-value">${course.課程期間}</span>
+                        </div>
+                        
+                        <div class="registration-info">
+                            <strong>📝 報名資訊：</strong> ${course.報名資訊}
+                        </div>
+                        
+                        <a href="${course.課程連結}" target="_blank" class="course-link">
+                            查看詳細資訊 →
+                        </a>
+                    </div>
+                `).join('');
+                
+            } catch (error) {
+                console.error('載入資料失敗:', error);
+                document.getElementById('coursesContainer').innerHTML = 
+                    '<div class="no-data">❌ 無法載入課程資料，請確認 data.json 檔案存在</div>';
+            }
+        }
+        
+        // 頁面載入時執行
+        window.onload = function() {
+            loadDateSettings();
+            loadCourses();
+        };
+    </script>
+</body>
+</html>
