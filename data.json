@@ -1,4 +1,111 @@
 {
-  "last_updated": "等待首次執行",
-  "courses": []
+  "last_updated": "2026-01-23 10:31:57",
+  "total_courses": 15,
+  "courses": [
+    {
+      "課程主題": "認識並培育臨床復原力",
+      "課程期間": "114/10/30～ 114/10/30",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：不需報名，於課程時段直接到會場即可",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/5ef76bc232674650b3d77ebdce46ba4a"
+    },
+    {
+      "課程主題": "114年度「中青草藥研習營」",
+      "課程期間": "114/11/16～ 114/11/16",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/02a2cc07404c44a49d64f6c4f0fe35f1"
+    },
+    {
+      "課程主題": "臨床能力委員會經驗的分享與實作演練",
+      "課程期間": "114/11/20～ 114/11/20",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：事先報名，當日為實體課程",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/cfc5bb809b414fb9a0f6145585f0508d"
+    },
+    {
+      "課程主題": "如何讓藥學生及PGY藥師善用DynaMed進行實證醫學文獻查證? 教學技巧分享",
+      "課程期間": "114/10/29～ 114/10/29",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：https://more.ebsco.com/TW-2025-10-29-WBN-DynaMed-SeriesSE-3433400_2025-dynamed-series-sse.html?utm_medium=social&utm_source=facebook&utm_campaign=0_china_medical_clinical-decisions_dynamed_webinar_facebook_0_0_0_202508",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/d3ef9c2be0e346da83a8ca90cb3fc705"
+    },
+    {
+      "課程主題": "114年10月份臨床藥學會南區雙月會「看見．實踐．連結：藥師在數位醫療時代的三重使命」聚焦醫療品質、安全實踐與敘事人文的整合應用",
+      "課程期間": "114/10/04～ 114/10/04",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：線上報名：https://reurl.cc/3KkX70",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/e83ab275493644c5bd982941b216ade4"
+    },
+    {
+      "課程主題": "師培初進階課程：能力導向之醫學教育概論",
+      "課程期間": "114/11/06～ 114/11/06",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：請線上報名後致電確認報名狀況，電話：07-7030315分機3171，鄭先生，開放人數10名。",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/cde01b59cea84870a7d2b2a49b96716d"
+    },
+    {
+      "課程主題": "中區雙月會-仁愛80 精準與溫度並行",
+      "課程期間": "114/11/29～ 114/11/29",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：11/3起，限額報名",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/03729bb65ec24b5aab188822e82f244c"
+    },
+    {
+      "課程主題": "臨床藥學會北區雙月會-敘事於全人藥事服務的實踐與教學",
+      "課程期間": "114/11/29～ 114/11/29",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：依學會公告",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/4abcb04e193e437cab4e2ea0bd404935"
+    },
+    {
+      "課程主題": "台灣醫事聯合臨床技能發展學會2025年會員大會暨學術研討會",
+      "課程期間": "114/09/20～ 114/09/20",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：報名連結：https://forms.gle/sRtRcDvcdYFwMEiE7",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/1a79c0ee4c3c4e31961a6662e2775e66"
+    },
+    {
+      "課程主題": "114年11月臨床藥學會北區雙月會 新藥管理與癌症治療及智能科技轉型藥事服務研討會",
+      "課程期間": "114/11/15～ 114/11/15",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：報名連結：https://ssur.cc/DDMuno8",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/3f487bceffb04d6eb4c987817698937c"
+    },
+    {
+      "課程主題": "114年09月臨床藥學會中區雙月會",
+      "課程期間": "114/09/20～ 114/09/20",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：線上報名",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/b827366037064b92aa8efe3bcb7c621e"
+    },
+    {
+      "課程主題": "114年屏東縣藥師公會第二梯次藥師繼續教育課程",
+      "課程期間": "114/11/09～ 114/11/09",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：一律網路報名：https://reurl.cc/RkodK9",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/f1d3e567a9844f01b38be7b0af026884"
+    },
+    {
+      "課程主題": "2025年中藥學指導教師-中藥臨床教學實務訓練課程(南區場)",
+      "課程期間": "114/09/21～ 114/09/21",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/c984e2cbad5e46da8e4fbc3eb4942d47"
+    },
+    {
+      "課程主題": "智藥新境2025研討會－生成式AI與臨床藥事照護",
+      "課程期間": "114/10/18～ 114/10/18",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：線上報名",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/4d656423991a4f88bb74aef7b8f0dfd4"
+    },
+    {
+      "課程主題": "中藥學指導教師-中藥臨床教學實務訓練課程",
+      "課程期間": "114/09/21～ 114/09/21",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：https://reurl.cc/EQ4ebA",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/7638ff165627457b8a5aba4022de1504"
+    }
+  ]
 }

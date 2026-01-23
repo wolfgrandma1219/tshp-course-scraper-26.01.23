@@ -21,8 +21,20 @@ def setup_driver():
     chrome_options.add_argument('--disable-blink-features=AutomationControlled')
     chrome_options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36')
     
-    # 直接使用系統的 ChromeDriver
-    driver = webdriver.Chrome(options=chrome_options)
+    # 在 GitHub Actions 中，我們通常會預裝好 Chrome 和 ChromeDriver
+    # 這裡使用最簡單的初始化方式
+    try:
+        driver = webdriver.Chrome(options=chrome_options)
+    except Exception as e:
+        print(f"嘗試預設初始化失敗: {e}")
+        # 嘗試指定 service (適用於某些環境)
+        try:
+            from selenium.webdriver.chrome.service import Service
+            service = Service()
+            driver = webdriver.Chrome(service=service, options=chrome_options)
+        except Exception as e2:
+            print(f"嘗試 Service 初始化失敗: {e2}")
+            raise e
     return driver
 
 def convert_to_roc_date(date_str):
