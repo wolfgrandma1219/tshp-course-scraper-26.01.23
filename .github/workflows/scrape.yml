@@ -19,40 +19,16 @@ jobs:
       with:
         python-version: '3.10'
         
-    - name: 安裝 Chrome 和 ChromeDriver
+    - name: 安裝 Chrome
       run: |
         sudo apt-get update
-        sudo apt-get install -y wget unzip
-        
-        # 取得最新的穩定版 Chrome 和對應的 ChromeDriver
-        # 使用 Chrome for Testing 版本（確保版本匹配）
-        CHROME_VERSION="131.0.6778.87"
-        
-        # 安裝特定版本的 Chrome
-        wget -q "https://storage.googleapis.com/chrome-for-testing-public/${CHROME_VERSION}/linux64/chrome-linux64.zip"
-        unzip -q chrome-linux64.zip
-        sudo rm -rf /usr/bin/google-chrome /usr/bin/google-chrome-stable
-        sudo mv chrome-linux64 /opt/chrome
-        sudo ln -s /opt/chrome/chrome /usr/bin/google-chrome
-        
-        # 安裝對應版本的 ChromeDriver
-        wget -q "https://storage.googleapis.com/chrome-for-testing-public/${CHROME_VERSION}/linux64/chromedriver-linux64.zip"
-        unzip -q chromedriver-linux64.zip
-        sudo rm -f /usr/local/bin/chromedriver
-        sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
-        sudo chmod +x /usr/local/bin/chromedriver
-        
-        # 清理
-        rm -rf chrome-linux64.zip chromedriver-linux64.zip chromedriver-linux64
-        
-        # 驗證版本
-        google-chrome --version
-        chromedriver --version
+        sudo apt-get install -y google-chrome-stable
         
     - name: 安裝 Python 套件
       run: |
-        pip install --upgrade pip
+        python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install webdriver-manager
         
     - name: 讀取日期設定
       id: dates
@@ -61,10 +37,14 @@ jobs:
           echo "日期設定檔存在"
         else
           echo "建立預設日期設定"
+          # 取得今天日期 (西元)
+          TODAY=$(date +%Y-%m-%d)
+          # 取得 30 天後日期 (西元)
+          FUTURE=$(date -d "+30 days" +%Y-%m-%d)
           cat > date_settings.json << EOF
         {
-          "start_date": "$(date +%Y/%m/%d)",
-          "end_date": "$(date -d '+30 days' +%Y/%m/%d)"
+          "start_date": "$TODAY",
+          "end_date": "$FUTURE"
         }
         EOF
         fi
