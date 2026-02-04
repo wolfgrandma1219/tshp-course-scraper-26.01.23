@@ -1,27 +1,13 @@
 {
-  "last_updated": "2026-02-03 05:20:48",
-  "total_courses": 5,
+  "last_updated": "2026-02-04 05:13:50",
+  "total_courses": 4,
   "courses": [
-    {
-      "課程主題": "應用XR與AI虛擬人於醫事教育-簡介與案例分享",
-      "課程期間": "115/02/05～ 115/02/05",
-      "積分": "1",
-      "報名資訊": "開放報名，說明：",
-      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/7a7586ff099644ffb16285869bb58a5a"
-    },
     {
       "課程主題": "AI生成簡報在醫藥應用工作坊",
       "課程期間": "115/02/07～ 115/02/07",
       "積分": "1",
       "報名資訊": "開放報名，說明：院內系統報名",
       "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/11240fc0d54b4cabab4681d461a97a10"
-    },
-    {
-      "課程主題": "EPA建置與CCC運作",
-      "課程期間": "115/02/03～ 115/02/03",
-      "積分": "1",
-      "報名資訊": "開放報名，說明：",
-      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/eed996b82b654f2a82caa5005eb3d0d1"
     },
     {
       "課程主題": "115年2月臨床藥學會雲嘉區雙月會~AI工具運用與智慧、創意教學",
@@ -36,6 +22,13 @@
       "積分": "1",
       "報名資訊": "開放報名，說明：預計3/2,09:00起至額滿截止",
       "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/b9f0e59b97d64af58c34df1cffcb31c6"
+    },
+    {
+      "課程主題": "應用XR與AI虛擬人於醫事教育-簡介與案例分享",
+      "課程期間": "115/02/05～ 115/02/05",
+      "積分": "1",
+      "報名資訊": "開放報名，說明：",
+      "課程連結": "https://www.tshp.org.tw/ehc-tshp/s/w/edu/scheduleInfo1/schedule/7a7586ff099644ffb16285869bb58a5a"
     }
   ]
 }
